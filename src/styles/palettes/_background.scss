@@ -1,0 +1,27 @@
+
+.main {
+  background-color: #1a202c;
+  color: #f7fafc;
+
+  .text-default {
+    color: #f7fafc;
+  }
+
+  .text-primary {
+    color: #48bb78;
+  }
+
+  .text-secondary {
+    color: #e2e8f0;
+  }
+
+  .border-default {
+    border-color: #2d3748;
+  }
+}
+
+code,
+pre {
+  background-color: #2d3748;
+  color: #f7fafc;
+}

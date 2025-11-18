@@ -1,0 +1,113 @@
+@use 'tailwindcss';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.navbar {
+  z-index: 10;
+  top: 0px;
+  left: 0px;
+  padding-left: 0px;
+  display: flex;
+  position: fixed;
+  width: 100%;
+  height: 4rem;
+  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  .navbar-inner {
+    padding-right: 1rem;
+  }
+}
+
+.main {
+  padding-left: 0px;
+}
+
+.left-sidebar {
+  width: 16rem;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  height: 100%;
+  overflow: hidden;
+  z-index: 20;
+  position: fixed;
+  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  transition-property: transform;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+  transform: translateX(16rem);
+  animation: ease-in-out;
+  > div {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    height: 100%;
+    overflow: auto;
+    > div {
+      height: 100%;
+      width: 16rem;
+    }
+  }
+}
+
+.is-closed {
+  .main {
+    scroll-padding-left: 0px;
+    scroll-padding-right: 0px;
+  }
+
+  .left-sidebar {
+    transform: translateX(16rem);
+
+  }
+
+  .navbar {
+    .navbar-inner {
+      padding-left: 0px;
+    }
+  }
+}
+
+@screen lg {
+  .main {
+    padding-left: 16rem;
+  }
+
+  .left-sidebar {
+    transition-property: transform;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+    transform: translateX(16rem);
+    animation: ease-in-out;
+
+    &.is-closed {
+      .main {
+        padding-left: 0;
+      }
+
+      .left-sidebar {
+        transform: translateX(16rem);
+      }
+
+      .navbar {
+        .navbar-inner {
+          padding-left: 0px;
+        }
+      }
+    }
+  }
+
+  .navbar {
+    padding-left: 0px;
+    .navbar-inner {
+      padding-left: 16rem;
+    }
+  }
+
+  .logo button {
+    display: none;
+  }
+
+
+}

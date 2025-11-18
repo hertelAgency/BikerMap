@@ -1,0 +1,13 @@
+@use "../variables";
+
+.right-sidebar {
+  @reference text-sm w-64 transform transition duration-300 ease-in-out shadow fixed top-0 bottom-0 h-full overflow-hidden z-20;
+  @reference right-0;
+  &.open {
+    @reference translate-x-0;
+  }
+
+  &:not(.open) {
+    @reference translate-x-64;
+  }
+}

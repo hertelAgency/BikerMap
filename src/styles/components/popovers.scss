@@ -1,0 +1,38 @@
+
+.popover {
+  @reference border-0 z-50 font-normal text-sm max-w-xs no-underline break-words rounded-lg shadow-lg hidden;
+  &.popover-show {
+    @reference block;
+  }
+
+  .popover-title {
+    @reference font-semibold p-2 mb-0 border-b border-solid uppercase rounded-t-lg;
+  }
+
+  .popover-content {
+    @reference p-2;
+  }
+}
+
+.popover {
+  background-color: #1a202c;
+  color: #f7fafc;
+  border-color: #2d3748
+}
+
+.tooltip {
+  @reference border-0 z-50 font-normal text-sm max-w-xs no-underline break-words rounded-lg shadow-lg hidden;
+  &.tooltip-show {
+    @reference block;
+  }
+
+  .tooltip-content {
+    @reference p-2;
+  }
+}
+
+.tooltip {
+  background-color: #1a202c;
+  color: #f7fafc;
+  border-color: #2d3748
+}

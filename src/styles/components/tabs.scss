@@ -1,0 +1,45 @@
+@use "../variables";
+
+.tabs {
+  .tab {
+    @reference font-bold uppercase;
+    @reference text-xs p-3;
+    &.tab-pill {
+      @reference rounded-lg flex flex-col items-center justify-center w-24;
+    }
+  }
+
+  .tab-content {
+    @reference w-full p-4;
+  }
+}
+
+@each $key, $value in $palettes {
+  [data-background="#{$key}"] {
+    .tabs {
+      background-color: #1a202c;
+
+      .tab {
+        background-color: #1a202c;
+
+        &:hover,
+        &.tab-active {
+          background-color: #2d3748;
+        }
+
+        &.tab-underline {
+          @reference border-b-2 #{map-get($value, "tabs-border-color")};
+          &:hover,
+          &.tab-active {
+            background-color: #1a202c;
+            @reference border-b-2 #{map-get($value, "highlight-border-color")};
+          }
+        }
+      }
+
+      .tab-content {
+        background-color: #1a202c;
+      }
+    }
+  }
+}

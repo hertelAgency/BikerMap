@@ -1,0 +1,58 @@
+@use "../variables";
+
+.badge {
+  @reference uppercase font-bold inline-flex text-center;
+  &.badge-default {
+    @reference text-xs px-2 py-1;
+  }
+
+  &.badge-sm {
+    @reference text-xs px-2 py-0;
+  }
+
+  &.badge-lg {
+    @reference text-xs px-2 py-2;
+  }
+
+  &.badge-circle {
+    @reference text-xs h-5 w-5 inline-flex items-center justify-center rounded-full;
+    @reference p-0 leading-none #{!important};
+    &.badge-sm {
+      @reference text-xs h-4 w-4 inline-flex items-center justify-center rounded-full;
+    }
+
+    &.badge-lg {
+      @reference text-xs h-6 w-6 inline-flex items-center justify-center rounded-full;
+    }
+  }
+
+  /*rounded, outlined, flat, raised, icon*/
+  &.badge-rounded {
+    @reference rounded-lg;
+  }
+
+  &.badge-outlined {
+    @reference bg-transparent border border-current;
+  }
+}
+
+/*colors*/
+.badge-black {
+  @reference bg-black text-white;
+}
+
+.badge-white {
+  @reference bg-white text-gray-900;
+}
+
+@each $color in $colors {
+  .badge-#{"" + $color} {
+    @reference bg-#{"" + $color}-500 text-white;
+  }
+  .badge-alt-#{"" + $color} {
+    @reference bg-#{"" + $color}-200 text-#{"" + $color}-600;
+  }
+  .badge-outlined-#{"" + $color} {
+    @reference bg-transparent border text-#{"" + $color}-500 border-#{"" + $color}-500 #{!important};
+  }
+}

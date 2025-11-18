@@ -1,0 +1,38 @@
+.left-sidebar {
+    div {
+      width: calc(16rem + 24px);
+    }
+
+    .list-item {
+      @apply rounded-lg py-3 px-2 w-full flex items-center justify-start;
+      .badge {
+        @apply mr-4 ml-auto #{!important};
+      }
+    }
+
+    .accordion {
+      max-height: 0;
+      transition: max-height 0.35s ease-in-out;
+      overflow: hidden;
+
+      &.open {
+        max-height: 100vh;
+      }
+    }
+
+    .right-arrow:before {
+      position: absolute;
+      top: 15px;
+      font-size: 10px;
+      transform: rotate(-360deg);
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .right-arrow.is-open:before {
+      transform: rotate(90deg);
+    }
+
+    .right-arrow:before {
+      right: 8px;
+    }
+}

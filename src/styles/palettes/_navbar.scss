@@ -1,0 +1,18 @@
+.navbar {
+  background-color: #1a202c;
+  color: #f7fafc;
+
+  input {
+    background-color: #2d3748;
+  }
+
+  .navbar-dropdown {
+    background-color: #1a202c;
+    color: #f7fafc;
+
+    &-title {
+      background-color: #2f855a;
+      color: #fff;
+    }
+  }
+}

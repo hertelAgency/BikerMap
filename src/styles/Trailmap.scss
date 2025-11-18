@@ -1,0 +1,39 @@
+.trailmap{
+  position: fixed;
+  top: 70px;
+  bottom: 40px;
+  right: 0;
+  display: flex;
+  width: 100vw;
+
+  aside{
+    flex: .15;
+    .navSection{
+      display: flex;
+      flex-direction: column;
+
+      span{
+        display: flex;
+        justify-content: space-between;
+        padding: .5rem 0 .5rem 2rem;
+        border: solid 1px #000;
+        background: #2d3748;
+        color: #e2e8f0;
+        cursor: pointer;
+
+        &:hover{
+          background: rgba(45, 55, 72, 0.8);
+          font-weight: bold;
+        }
+      }
+    }
+
+    .trailInfo{
+      padding: 1rem 0 1rem 2rem;
+    }
+  }
+
+  .mapContainer{
+    flex: 1;
+  }
+}

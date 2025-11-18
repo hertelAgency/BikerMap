@@ -1,0 +1,43 @@
+@use "../variables";
+
+.progress-bar {
+  @reference relative flex w-full;
+  &:not(.progress-bar-with-text) {
+    @reference h-1;
+  }
+
+  &.progress-bar-with-text {
+    @reference h-5 text-center text-xs;
+  }
+
+  &.progress-bar-black {
+    > div {
+      @reference bg-black text-white;
+    }
+  }
+
+  &.progress-bar-white {
+    > div {
+      @reference bg-white text-gray-900;
+    }
+  }
+
+  @each $color in $colors {
+    &.progress-bar-#{"" + $color} {
+      > div {
+        @reference bg-#{"" + $color}-500 text-white;
+      }
+    }
+  }
+
+  > div {
+    @reference absolute top-0 h-1;
+      @reference left-0;
+
+    > div {
+      @reference absolute top-0 w-full;
+        @reference left-0;
+
+    }
+  }
+}

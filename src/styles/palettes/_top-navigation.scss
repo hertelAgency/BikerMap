@@ -1,0 +1,22 @@
+@import "../variables";
+
+.top-navigation {
+  background-color: #1a202c;
+  color: #f7fafc;
+
+  ul {
+    background-color: #1a202c;
+    color: #f7fafc;
+
+    li {
+      background-color: #1a202c;
+      color: #f7fafc;
+
+      a {
+        &:hover {
+          background-color: #2d3748;
+        }
+      }
+    }
+  }
+}

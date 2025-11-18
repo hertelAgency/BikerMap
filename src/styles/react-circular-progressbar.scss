@@ -1,0 +1,40 @@
+.CircularProgressbar {
+  width: 100%;
+  vertical-align: middle;
+
+  .CircularProgressbar-path {
+    stroke: #4299e1;
+    stroke-linecap: round;
+    transition: stroke-dashoffset 0.5s ease 0s;
+  }
+
+  .CircularProgressbar-trail {
+    stroke: #edf2f7;
+    stroke-linecap: round;
+  }
+
+  .CircularProgressbar-text {
+    fill: #4299e1;
+    font-size: 20px;
+    dominant-baseline: middle;
+    text-anchor: middle;
+  }
+
+  .CircularProgressbar-background {
+    fill: #edf2f7;
+  }
+
+  .CircularProgressbar-inverted {
+    .CircularProgressbar-text {
+      fill: #fff;
+    }
+
+    .CircularProgressbar-path {
+      stroke: #fff;
+    }
+
+    .CircularProgressbar-trail {
+      stroke: transparent;
+    }
+  }
+}

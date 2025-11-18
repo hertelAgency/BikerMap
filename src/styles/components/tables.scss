@@ -1,0 +1,71 @@
+@use "../variables";
+
+.table {
+  @reference min-w-full table-auto;
+  &.no-border thead tr th,
+  &.no-border tbody tr td {
+    @reference border-0 border-none;
+  }
+
+  thead tr th {
+    @reference px-3 py-2 border-b text-xs leading-4 font-medium uppercase tracking-wider;
+  }
+
+  tbody tr td {
+    @reference px-3 py-2 border-b whitespace-nowrap;
+  }
+
+  &.table-sm {
+    thead tr th {
+      @reference px-1 py-0;
+    }
+
+    tbody tr td {
+      @reference px-1 py-0;
+    }
+  }
+
+  &.table-lg {
+    thead tr th {
+      @reference px-6 py-3;
+    }
+
+    tbody tr td {
+      @reference px-6 py-3;
+    }
+  }
+}
+
+  .table {
+    @reference text-left;
+    thead tr th,
+    tbody tr td {
+      @reference text-left;
+    }
+  }
+
+@each $key, $value in $palettes {
+  [data-background="#{$key}"] {
+    .table {
+      @reference #{map-get($value, "table-background-odd")};
+      &.striped {
+        tbody tr:nth-child(odd) td {
+          @reference #{map-get($value, "table-background-odd")};
+        }
+
+        tbody tr:nth-child(even) td {
+          @reference #{map-get($value, "table-background-even")};
+        }
+      }
+
+      thead tr th {
+        @reference #{map-get($value, "table-border-color")};
+        @reference #{map-get($value, "table-th-color")};
+      }
+
+      tbody tr td {
+        @reference #{map-get($value, "table-border-color")};
+      }
+    }
+  }
+}

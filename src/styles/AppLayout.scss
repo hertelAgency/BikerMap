@@ -1,0 +1,122 @@
+@use "settings";
+
+  header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 2px;
+    width: 100vw;
+    height: 60px;
+    z-index: 2;
+
+    a{
+      align-content: center;
+      align-items: center;
+      display: flex;
+      justify-content: center;
+    }
+
+    section{
+
+      display: flex;
+      justify-content: space-between;
+      padding: 0 10px;
+      h1{
+        font-family: Bowlby, sans-serif;
+        font-size: 2rem;
+        color: #e2e8f0;
+        line-height: 60px;
+      }
+
+      nav{
+        a{
+          color: #e2e8f0;
+          font-size: 1rem;
+          padding: 0 10px;
+          line-height: 60px;
+          text-decoration: none;
+          &:hover{
+            font-weight: bold;
+          }
+        }
+      }
+    }
+
+  }
+
+
+
+  .container{
+    max-width: 100vw;
+    height: 80px;
+    padding-top: 60px;
+    background-color: black;
+
+    section{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 80vh;
+    }
+
+    .hero{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      height: 85vh;
+
+      .background-image{
+        height: 100vh;
+        width: 100vw;
+        object-fit: cover;
+        position: absolute;
+        filter: brightness(40%);
+        z-index: 1;
+      }
+
+      .logo{
+        height: 45vh;
+        z-index: 2;
+        filter: invert(1);
+        object-fit: contain;
+      }
+
+      h1{
+        color: #fff;
+        filter: brightness(200%);
+        z-index: 2;
+      }
+
+      p{
+        z-index: 2;
+      }
+
+      a{
+        z-index: 2;
+        text-decoration: none;
+        color: black;
+        background-color: #e2e8f0;
+        margin: 20px;
+        padding: 5px 10px;
+        border-radius: 30px;
+
+        &:hover{
+          background-color: rgb(188, 187, 187);
+        }
+      }
+    }
+  }
+
+  footer{
+    height: 40px;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }

@@ -1,0 +1,135 @@
+@use "../variables";
+
+a,
+button {
+  @reference outline-none;
+}
+
+a:hover,
+a:active,
+a:focus,
+button:hover,
+button:active,
+button:focus {
+  @reference outline-none;
+}
+
+/*colors*/
+.btn-transparent {
+  @reference bg-transparent;
+}
+
+.btn-black {
+  @reference bg-black text-white;
+}
+
+.btn-black:hover,
+.btn-black:active,
+.btn-black:focus {
+  @reference bg-black text-white;
+}
+
+.btn-white {
+  @reference bg-white text-gray-900;
+}
+
+.btn-white:hover,
+.btn-white:active,
+.btn-white:focus {
+  @reference bg-gray-100 text-gray-900;
+}
+
+@each $color in $colors {
+  .btn-#{"" + $color} {
+    @reference bg-#{"" + $color}-500 text-white;
+  }
+  .btn-#{"" + $color}:hover,
+  .btn-#{"" + $color}:active,
+  .btn-#{"" + $color}:focus {
+    @reference bg-#{"" + $color}-600 text-white;
+  }
+  .btn-outlined-#{"" + $color} {
+    @reference bg-transparent border text-#{"" + $color}-500 border-#{"" + $color}-500 #{!important};
+  }
+  .btn-outlined-#{"" + $color}:hover,
+  .btn-outlined-#{"" + $color}:active,
+  .btn-outlined-#{"" + $color}:focus {
+    @reference text-#{"" + $color}-600 border-#{"" + $color}-600 #{!important};
+  }
+  .btn-flat-#{"" + $color} {
+    @reference bg-transparent text-#{"" + $color}-500 #{!important};
+  }
+}
+
+.btn {
+  @reference font-bold uppercase;
+  &.btn-default {
+    @reference text-xs px-4 py-2;
+  }
+
+  &.btn-lg {
+    @reference text-base px-6 py-3;
+  }
+
+  /*rounded, outlined, flat, raised, icon*/
+  &.btn-rounded {
+    @reference rounded-lg;
+  }
+
+  &.btn-flat {
+    @reference bg-transparent;
+  }
+
+  &.btn-outlined {
+    @reference bg-transparent border border-current;
+  }
+
+  &.btn-raised {
+    @reference shadow;
+  }
+
+  &.btn-icon {
+    @reference flex flex-row items-center justify-center;
+  }
+
+  &.btn-block {
+    @reference w-full;
+  }
+
+  &.btn-circle {
+    @reference text-xs h-8 w-8 rounded-full inline-flex items-center justify-center;
+    @reference p-0 #{!important};
+    &.btn-circle-sm {
+      @reference text-xs h-6 w-6 inline-flex items-center justify-center;
+    }
+
+    &.btn-circle-lg {
+      @reference text-base h-12 w-12 inline-flex items-center justify-center;
+    }
+  }
+}
+
+.btn {
+  &.btn-default-color {
+    background-color: #1a202c;
+
+    &:hover {
+      background-color: #2d3748;
+    }
+  }
+
+  &.btn-flat:hover,
+  &.btn-flat:active,
+  &.btn-flat:focus {
+    background-color: #2d3748 #{!important};
+  }
+}
+
+.btn-group {
+  > .btn {
+    @reference border-r-0 #{!important};
+    &:last-child {
+      @reference border-r #{!important};
+    }
+  }
+}

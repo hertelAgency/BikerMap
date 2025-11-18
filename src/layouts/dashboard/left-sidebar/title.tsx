@@ -1,0 +1,20 @@
+import React from 'react'
+import {shallowEqual, useSelector} from 'react-redux'
+
+const Title = ({children}) => {
+    const {leftSidebar} = useSelector(
+        state => ({
+            leftSidebar: state.dashboard.leftSidebar
+        }),
+        shallowEqual
+    )
+    const {showSectionTitle} = {...leftSidebar}
+    if (!showSectionTitle) return null
+    return (
+        <div className="uppercase font-bold text-xs tracking-wider p-4">
+            {children}
+        </div>
+    )
+}
+
+export default Title

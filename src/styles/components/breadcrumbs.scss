@@ -1,0 +1,15 @@
+@use "../variables";
+
+.breadcrumbs {
+  @reference w-full flex;
+  > ol {
+    @reference list-none flex flex-row items-center justify-start;
+    > li {
+      @reference flex items-center;
+    }
+  }
+
+  .breadcrumb-arrow {
+    transform: rotate(0deg);
+  }
+}

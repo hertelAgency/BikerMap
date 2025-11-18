@@ -1,0 +1,57 @@
+.left-sidebar {
+  background-color: #1a202c;
+  color: #f7fafc;
+
+  .user-card {
+    img {
+      border-color: #2d3748
+    }
+  }
+
+
+  li {
+    color: #f7fafc;
+
+    &:hover {
+      color: #fff;
+    }
+
+    button,
+    a {
+      @reference transition duration-150 ease-in-out;
+      background-color: #1a202c;
+      color: #f7fafc;
+
+      .icon {
+        svg {
+          color: #f7fafc;
+        }
+      }
+
+      &:hover {
+        background-color: #2f855a;
+        color: #fff;
+
+        .icon {
+          svg {
+            color: #fff;
+          }
+        }
+      }
+    }
+
+    &.is-closed {
+      color: #fff;
+
+      > button,
+      > a {
+        background-color: #2f855a;
+        color: #fff;
+
+        svg {
+          color: #fff;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,38 @@
+.form-icon {
+  @reference h-4 w-4 stroke-current absolute bottom-0;
+  margin-bottom: 10px;
+
+  &.form-success {
+    @reference text-red-500;
+  }
+
+  &.form-error {
+    @reference text-green-500;
+  }
+
+  @reference right-0 mr-2;
+}
+
+.form-input,
+.form-textarea,
+.form-multiselect,
+.form-select {
+  background-color: #1a202c;
+  border-color: #2d3748;
+  color: #f7fafc;
+}
+
+.form-input::placeholder,
+.form-textarea::placeholder,
+.form-multiselect::placeholder,
+.form-select::placeholder {
+  color: #f7fafc;
+}
+
+.form-radio,
+.form-checkbox {
+  background-color: #1a202c;
+  border-color: #2d3748
+  color #4299e1;
+}
+

@@ -1,0 +1,72 @@
+@use "../variables";
+
+.alert {
+  @reference w-full flex flex-wrap items-center justify-start p-4;
+  [data-direction="ltr"] & {
+    .alert-icon {
+      @reference mr-2;
+    }
+
+    .alert-close {
+      @reference ml-auto;
+    }
+  }
+
+  [data-direction="rtl"] & {
+    .alert-icon {
+      @reference ml-2;
+    }
+
+    .alert-close {
+      @reference mr-auto;
+    }
+  }
+
+  &.alert-sm {
+    @reference p-2 #{!important};
+  }
+
+  &.alert-hidden {
+    @reference hidden #{!important};
+  }
+}
+
+/*colors*/
+.alert-black {
+  @reference bg-black text-white;
+}
+
+.alert-white {
+  @reference bg-white text-gray-900;
+}
+
+@each $color in $colors {
+  .alert-#{"" + $color} {
+    @reference bg-#{"" + $color}-500 text-white;
+  }
+  .alert-outlined-#{"" + $color} {
+    @reference bg-transparent border text-#{"" + $color}-500 border-#{"" + $color}-500 #{!important};
+  }
+  .alert-flat-#{"" + $color} {
+    @reference bg-transparent text-#{"" + $color}-500 #{!important};
+  }
+}
+
+.alert {
+  /*rounded, outlined, flat, raised*/
+  &.alert-rounded {
+    @reference rounded-lg;
+  }
+
+  &.alert-flat {
+    @reference bg-transparent;
+  }
+
+  &.alert-outlined {
+    @reference bg-transparent border border-current;
+  }
+
+  &.alert-raised {
+    @reference shadow;
+  }
+}

@@ -1,12 +1,17 @@
 {
-  "name": "frontend",
+  "name": "biker-map-web",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.1.0",
+  "description": "Interactive map for discovering mountain bike trails, bike parks, and shops",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "lint:fix": "eslint . --fix",
+    "format": "prettier --write \"src/**/*.{ts,tsx,js,jsx,json,css,scss,md}\"",
+    "format:check": "prettier --check \"src/**/*.{ts,tsx,js,jsx,json,css,scss,md}\"",
+    "preview": "vite preview",
+    "type-check": "tsc --noEmit"
   },
   "dependencies": {
     "@fullhuman/postcss-purgecss": "^7.0.2",

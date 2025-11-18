@@ -1,0 +1,24 @@
+# Dependencies
+node_modules
+
+# Build outputs
+dist
+dist-ssr
+build
+.next
+out
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Logs
+*.log
+
+# Other
+coverage
+.DS_Store
+*.lock
+pnpm-lock.yaml
+package-lock.json
